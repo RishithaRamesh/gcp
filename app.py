@@ -59,6 +59,7 @@ def chat():
     max_len = 20
     while True:
         if request.method == 'POST':
+            print(arr)
             inp = request.form['Question']
             if inp.lower() == "quit":
                 break
@@ -77,9 +78,9 @@ def chat():
                         # print(Fore.GREEN + "ChatBot:" + Style.RESET_ALL, np.random.choice(i['responses']))
 
             # print(Fore.GREEN + "ChatBot:" + Style.RESET_ALL,random.choice(responses))
-            arr.append(pred)
-            return render_template('index.html',pred=pred)
-    print(arr)
+            arr.append(['USER: '+inp, pred])
+            return render_template('index.html',pred=pred,arr=arr)
+            
 
 if __name__ == '__main__':
     app.run(debug=True)
