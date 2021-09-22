@@ -39,7 +39,7 @@ arr = []
 def index():
     return render_template('index.html')
 
-@app.route('/data',methods=['POST','GET'])
+@app.route('/index',methods=['POST','GET'])
 def chat():
     # load trained model
     print("Loading Saved Model...")
@@ -59,7 +59,7 @@ def chat():
     max_len = 20
     while True:
         if request.method == 'POST':
-            print(arr)
+            # print(arr)
             inp = request.form['Question']
             if inp.lower() == "quit":
                 break
@@ -68,10 +68,10 @@ def chat():
             if np.amax(result) < 0.8:
                 pred = "ChatBot: Sorry I didn't understand!"
                 # print(Fore.GREEN + "ChatBot:" + Style.RESET_ALL, "Sorry I didn't understand!")
-                continue
+                
             else:
                 tag = lbl_encoder.inverse_transform([np.argmax(result)])
-
+                print(np.amax(result))
                 for i in data['FAQ']:
                     if i['tag'] == tag:
                         pred = "CHATBOT: "+ np.random.choice(i['responses'])

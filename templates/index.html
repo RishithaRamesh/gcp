@@ -16,7 +16,7 @@
                 {% endfor %}
         {% endfor %}
 
-        <form action="/data" method = "POST">
+        <form action="/index" method = "POST">
             <p>
                 USER: <input type = "text" name = "Question" />
                 <input type = "submit" value = "Submit" />
@@ -24,6 +24,8 @@
         </form>
     </div>
     <div>
+        {% set pred='' %}
         {{pred}}
+        
     </div>
 </body>
