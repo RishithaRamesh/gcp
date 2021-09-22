@@ -33,12 +33,13 @@ with open("questions_final.json") as file:
 from flask import Flask,render_template,request
  
 app = Flask(__name__)
- 
+arr = []
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/index',methods=['POST','GET'])
+@app.route('/data',methods=['POST','GET'])
 def chat():
     # load trained model
     print("Loading Saved Model...")
@@ -76,7 +77,9 @@ def chat():
                         # print(Fore.GREEN + "ChatBot:" + Style.RESET_ALL, np.random.choice(i['responses']))
 
             # print(Fore.GREEN + "ChatBot:" + Style.RESET_ALL,random.choice(responses))
+            arr.append(pred)
             return render_template('index.html',pred=pred)
+    print(arr)
 
 if __name__ == '__main__':
     app.run(debug=True)
