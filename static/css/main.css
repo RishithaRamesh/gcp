@@ -38,7 +38,7 @@ body {
 }
 
 .nav-item {
-  margin-left: 5rem;
+  margin-left: 2rem;
 }
 
 .nav-link {
@@ -101,6 +101,14 @@ body {
   padding-right: 20%;
   text-align: center;
 }
+p {
+  color: #848484;
+  font-family: open sans, sans-serif;
+  line-height: 1.929;
+  font-size: 14px;
+  margin-bottom: 0;
+  font-weight: 300;
+}
 /*gcp list*/
 .row {
   margin: 0 -5px;
@@ -120,6 +128,8 @@ body {
 }
 ul {
   list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 .ul > li {
   padding: 10px;
@@ -142,7 +152,9 @@ ul {
   background-color: #ffffff;
 }
 .card:hover {
-  background-color: aqua;
+  background-color: #4285f4;
+  transition: 0.9s;
+  color: #fff;
 }
 .btn_3 {
   color: #000;
@@ -154,6 +166,7 @@ ul {
   transition: 0.5s;
   padding: 10px;
   margin: 2px;
+  transition: 0.5s;
 }
 .btn_3:after {
   position: absolute;
@@ -169,6 +182,7 @@ ul {
 a:link {
   text-decoration: none;
 }
+
 /*chat screen*/
 .chatbot {
   padding-left: 30%;
@@ -176,8 +190,20 @@ a:link {
   display: flex;
   flex-direction: column;
 }
+.bordercover {
+  border-style: solid;
+  border-radius: 30px;
+  border-width: thin;
+  border-color: #dadce0;
+}
+input[type="submit"] {
+  margin-left: -80px;
+  height: 30px;
+  width: 60px;
+}
+
 .chatbox1 {
-  background: blue;
+  background: #4285f4;
   padding: 15px;
   font-size: 14px;
   color: #ccc;
@@ -195,7 +221,7 @@ a:link {
 .chatbox2 {
   max-width: 80%;
   display: block;
-  background: rgb(182, 62, 62);
+  background: #dadce0;
   padding: 15px;
   font-size: 14px;
   color: rgb(3, 2, 2);
@@ -228,22 +254,20 @@ a:link {
     padding-left: 1%;
     padding-right: 1%;
   }
-  input[type="text"] {
-    width: 40%;
-  }
 }
 .chats {
-  float: left;
+  padding: 5px;
 }
 .inputarea {
   padding: 10px;
 }
 input[type="text"] {
-  width: 70%;
+  width: 90%;
   padding: 12px 20px;
-  margin: 8px 0;
   box-sizing: border-box;
-  border-radius: 30px;
+  border-color: #dadce0;
+  margin-left: 5%;
+  margin-right: 2%;
 }
 /*footer*/
 .footer {

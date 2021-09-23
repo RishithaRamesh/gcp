@@ -112,12 +112,12 @@
       }
       p {
         color: #848484;
-        font-family: open sans,sans-serif;
+        font-family: open sans, sans-serif;
         line-height: 1.929;
         font-size: 14px;
         margin-bottom: 0;
         font-weight: 300;
-    }
+      }
       /*gcp list*/
       .row {
         margin: 0 -5px;
@@ -161,7 +161,9 @@
         background-color: #ffffff;
       }
       .card:hover {
-        background-color: aqua;
+        background-color: #4285f4;
+        transition: 0.9s;
+        color: #fff;
       }
       .btn_3 {
         color: #000;
@@ -173,6 +175,7 @@
         transition: 0.5s;
         padding: 10px;
         margin: 2px;
+        transition: 0.5s;
       }
       .btn_3:after {
         position: absolute;
@@ -196,6 +199,18 @@
         display: flex;
         flex-direction: column;
       }
+      .bordercover {
+        border-style: solid;
+        border-radius: 30px;
+        border-width: thin;
+        border-color: #dadce0;
+      }
+      input[type="submit"] {
+        margin-left: -80px;
+        height: 30px;
+        width: 60px;
+      }
+
       .chatbox1 {
         background: #4285f4;
         padding: 15px;
@@ -248,22 +263,20 @@
           padding-left: 1%;
           padding-right: 1%;
         }
-        input[type="text"] {
-          width: 40%;
-        }
       }
       .chats {
-        float: left;
+        padding: 5px;
       }
       .inputarea {
         padding: 10px;
       }
       input[type="text"] {
-        width: 70%;
+        width: 90%;
         padding: 12px 20px;
-        margin: 8px 0;
         box-sizing: border-box;
-        border-radius: 30px;
+        border-color: #dadce0;
+        margin-left: 5%;
+        margin-right: 2%;
       }
       /*footer*/
       .footer {
@@ -310,8 +323,8 @@
               <a href="#" class="nav-link">Know More</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">Join Us</a>
-              </li>
+              <a href="#" class="nav-link">Join Us</a>
+            </li>
           </ul>
           <div class="hamburger">
             <span class="bar"></span>
@@ -323,15 +336,17 @@
 
       <div center class="content">
         <h2>About 30 Days of Google Cloud</h2>
-        <p style="font-weight: 350;font-size: 1.2rem;color:#848484">
+        <p style="font-weight: 350; font-size: 1.2rem; color: #848484">
           30 Days of Google Cloud program will provide you an opportunity to
           kickstart your career in cloud and get hands-on practice on Google
           Cloud Platform - the tool that powers apps like Google Search, Gmail
           and YouTube.
         </p>
         <h2>Earn valuable badges and fun goodies!</h2>
-        <p style="font-weight: 350;font-size: 1.2rem;color:#848484">On the succesful completion of this event, participants will stand a chance to win goodies like
-            laptop bags, customised T-shirts and Google Cloud Sticker packs.
+        <p style="font-weight: 350; font-size: 1.2rem; color: #848484">
+          On the succesful completion of this event, participants will stand a
+          chance to win goodies like laptop bags, customised T-shirts and Google
+          Cloud Sticker packs.
         </p>
         <h2>We have two exciting tracks for you:</h2>
       </div>
@@ -413,31 +428,39 @@
 
       <hr class="footer__hr" />
       <div class="chatbot">
-        <h2>Start messaging with the bot (type quit to stop)!</h2>
+        <h2 style="text-align: center">FAQ's</h2>
+        <h2 style="text-align: center">You can start texting with the bot!</h2>
 
-        <div class="chats">
-          {% for i in range(arr |length) %} {% for j in range( arr[i] |length )
-          %} {% if j%2 == 0 %}
-          <div class="chatbox1">
-            {{arr[i][j]}}
-            <br />
+        <div class="bordercover">
+          <div class="chats">
+            {% for i in range(arr |length) %} {% for j in range( arr[i] |length
+            ) %} {% if j%2 == 0 %}
+            <div class="chatbox1">
+              {{arr[i][j]}}
+              <br />
+            </div>
+            {% else %}
+            <div class="chatbox2">
+              {{arr[i][j]}}
+              <br />
+            </div>
+            {% endif %} {% endfor %} {% endfor %}
           </div>
-          {% else %}
-          <div class="chatbox2">
-            {{arr[i][j]}}
-            <br />
-          </div>
-          {% endif %} {% endfor %} {% endfor %}
-        </div>
-        <br />
+          <br />
 
-        <div class="inputarea">
-          <form action="/index" method="POST">
-            <h3>
-              USER: <input type="text" name="Question" />
-              <input type="submit" value="Submit" />
-            </h3>
-          </form>
+          <div class="inputarea">
+            <form action="/index" method="POST" class="formsize">
+              <h3>
+                <input
+                  type="text"
+                  placeholder="Enter Message..."
+                  name="Question"
+                  class="inputField"
+                />
+                <input type="submit" value="Submit" />
+              </h3>
+            </form>
+          </div>
         </div>
       </div>
 

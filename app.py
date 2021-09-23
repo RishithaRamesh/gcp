@@ -61,8 +61,8 @@ def chat():
         if request.method == 'POST':
             # print(arr)
             inp = request.form['Question']
-            if inp.lower() == "quit":
-                break
+            # if inp.lower() == "quit":
+            #     break
             result = model.predict(keras.preprocessing.sequence.pad_sequences(tokenizer.texts_to_sequences([inp]),truncating='post', maxlen=max_len))
 
             if np.amax(result) < 0.8:
@@ -78,7 +78,7 @@ def chat():
                         # print(Fore.GREEN + "ChatBot:" + Style.RESET_ALL, np.random.choice(i['responses']))
 
             # print(Fore.GREEN + "ChatBot:" + Style.RESET_ALL,random.choice(responses))
-            arr.append(['USER: '+inp, pred])
+            arr.append([inp, pred])
             return render_template('index.html',pred=pred,arr=arr)
             
 
