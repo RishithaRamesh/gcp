@@ -2,30 +2,313 @@
 <html lang="en">
 <head>
   <title>GCP</title>
-</head>
-<body>
-    <div>
-        <h2>
-            Start messaging with the bot (type quit to stop)!
-        </h2>
-
-        {% for row in arr %}
-                {% for elem in row %}
-                    {{elem}}
-                    <br>
-                {% endfor %}
-        {% endfor %}
-
-        <form action="/index" method = "POST">
-            <p>
-                USER: <input type = "text" name = "Question" />
-                <input type = "submit" value = "Submit" />
-            </p>
-        </form>
-    </div>
-    <div>
-        {% set pred='' %}
-        {{pred}}
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+  <style>
+    * {
+        box-sizing: border-box;
+      }
+    .container {
+        min-height:100%;
+        position:relative;
+     }
+      body {
+        font-family: open sans,sans-serif;
         
-    </div>
+      }
+    /*text in the start*/
+      .content{
+        padding-left: 20%;
+        padding-right: 20%;
+        text-align: center;    
+    }
+    /*gcp list*/
+      .row {
+          margin: 0 -5px;
+          margin-left: 10%;
+          margin-right: 10%;
+        }
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      .column {
+        float: left;
+        width: 50%;
+        padding: 0 10px;  
+      } 
+      ul{
+        list-style-type: none;
+      }
+      .ul>li{
+          padding: 10px;
+      }
+      /* Responsive columns */
+      @media screen and (max-width: 630px) {
+        .column {
+          width: 100%;
+          display: block;
+          margin-bottom: 20px;
+        }
+        .row {
+            display: block;
+          }
+      }
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        text-align: center;
+        background-color: #ffffff;
+      }
+
+      /*chat screen*/
+      .chatbot{
+          padding-left: 30%;
+          padding-right: 30%;
+          display: flex;
+          flex-direction: column;
+      }
+      .chatbox1{
+        background: blue;
+        padding: 15px;
+        font-size: 14px;
+        color: #ccc;
+        border-radius: 30px;
+        text-align: right;
+        font-weight: 100;
+        line-height: 1.5em;
+        text-align: right;
+        margin-left: 30%;
+        margin-bottom: 16px;
+        float: right;
+        display: table;
+        clear: both;
+    }
+    .chatbox2{
+        max-width: 80%;
+        display: block;
+        background: rgb(182, 62, 62);
+        padding: 15px;
+        font-size: 14px;
+        color: rgb(3, 2, 2);
+        border-radius: 30px;
+        font-weight: 100;
+        line-height: 1.5em;
+        text-align: left;
+        margin-bottom: 16px;
+        float: left;
+        display: table;
+        clear: both;  
+      }
+      @media screen and (max-width: 800px) {
+        .chatbot{
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+      }
+      @media screen and (max-width: 600px) {
+        .chatbot{
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+        input[type=text] {
+            width: 40%;
+          }
+      }
+      @media screen and (max-width: 480px) {
+        .chatbot{
+            padding-left: 1%;
+            padding-right: 1%;
+        }
+        input[type=text] {
+            width: 40%;
+          }
+      }
+      .chats{
+          float: left;
+      }
+      .inputarea{
+          padding: 10px;
+      }
+      input[type=text] {
+        width: 70%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border-radius: 30px;
+      }
+      /*footer*/
+      .footer {
+        margin-left: 10%;
+        margin-right: 10%;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      @media screen and (max-width: 700px) {
+        .col {
+          width: 100%;
+          display: block;
+          margin-bottom: 20px;
+        }
+        .footer {
+            display: block;
+          }
+      }
+      .footer__hr {
+        height: 1px;
+        border: none;
+        background: #444;
+        opacity: .2;
+      }
+        hr {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border: 0;
+            border-top: 1px solid rgba(0,0,0,.1);
+      }
+
+      .btn_3 {
+        color: #000;
+        text-transform: capitalize;
+        font-size: 14px;
+        position: relative;
+        display: inline-block;
+        -webkit-transition: .5s;
+        transition: .5s;
+        padding: 10px;
+    }
+
+  </style>
+</head>
+    <body>
+        <div class="container">
+            <div center class="content">
+                <h2>About 30 Days of Google Cloud</h2>
+                <p>
+                    30 Days of Google Cloud program will provide you an opportunity to kickstart your career in cloud and get hands-on practice on Google Cloud Platform - the tool that powers apps like Google Search, Gmail and YouTube.
+                </p>
+                <h2>We have two exciting tracks for you :</h2>
+            </div>
+            <div class="row">
+                <div class="column">
+                    <div class="card">
+                        <h3>Cloud Engineering</h3>
+                        <ul>
+                            <li>
+                                <a href="#" class="btn_3">List of quest to be completed</a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn_3">Getting Started: Create and Manage Cloud Resources</a>
+                                
+                            </li>
+                            <li>
+                                Perform Foundational Infrastructure Tasks In Google Cloud
+                            </li>
+                            <li>
+                                Setup and Configure a Cloud Environment in Google Cloud
+                            </li>
+                            <li>
+                                Deploy and Manage Cloud Environments with Google Cloud
+                            </li>
+                            <li>
+                                Build and Secure Networks in Google Cloud
+                            </li>
+                            <li>
+                                Deploy to Kubernetes in Google Cloud
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>      
+                <div class="column">
+                    <div class="card">
+                        <h3>Data Science & Machine Learning</h3>
+                        <ul>
+                            <li>
+                                <a href="#">List of quest to be completed</a>
+                            </li>
+                            <li>
+                                Getting Started: Create and Manage Cloud Resources
+                            </li>
+                            <li>
+                                Perform Foundational Data, ML, and AI Tasks in Google Cloud
+                            </li>
+                            <li>
+                                Insights from Data with BigQuery
+                            </li>
+                            <li>
+                                Engineer Data in Google Cloud
+                            </li>
+                            <li>
+                                Integrate with Machine Learning APIs
+                            </li>
+                            <li>
+                                Explore Machine Learning Models with Explainable AI
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chatbot">
+                <h2>
+                    Start messaging with the bot (type quit to stop)!
+                </h2>
+                
+                <div class='chats'>
+                    {% for i in range(arr |length) %}
+                        {% for j in range( arr[i] |length ) %}
+                            {% if j%2 == 0 %}
+                                <div class="chatbox1">
+                                    {{arr[i][j]}}
+                                    <br>
+                                </div>
+                            {% else %}
+                                <div class="chatbox2">
+                                    {{arr[i][j]}}
+                                    <br>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+                <br>
+                
+                <div class="inputarea">
+                    <form action="/index" method = "POST">
+                        <h3>
+                            USER: <input type = "text" name = "Question" />
+                            <input type = "submit" value = "Submit" />
+                        </h3>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                {% set pred='' %}
+                {{pred}} 
+            </div>
+
+            <hr class="footer__hr">
+            <div class="footer">
+                <div class="col">
+                    <h4>Tracks</h4>
+                    <p>Cloud Engineering Track</p>
+                    <p>Data Science and Machine Learning Track</p>  
+                </div>
+                <div class="col">
+                    <h4>Connect With Us:</h4>
+                    <p>Cloud Engineering Track</p> 
+                </div>
+                <div class="col">
+                    <h4>Contact:</h4>
+                    <p>Poorvi:</p> 
+                </div>
+            </div>
+            <hr class="footer__hr">
+            
+        </div>
+
 </body>

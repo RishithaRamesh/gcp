@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {
+    margin: 0 -5px;
+    display: flex;
+    justify-content: center;
+  }
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .row {
+      display: block;
+    }
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.chatbot{
+    padding-left: 30%;
+    padding-right: 30%;
+}
+.chatbox1{
+  
+  background: blue;
+  padding: 15px;
+  font-size: 14px;
+  color: #ccc;
+  border-radius: 30px;
+  text-align: right;
+  font-weight: 100;
+  line-height: 1.5em;
+  text-align: right;
+  margin-left: 30%;
+  margin-bottom: 16px;
+  float: right;
+  display: table;
+  clear: both;
+}
+.chatbox2{
+  max-width: 80%;
+  display: block;
+  background: rgb(182, 62, 62);
+  padding: 15px;
+  font-size: 14px;
+  color: rgb(3, 2, 2);
+  border-radius: 30px;
+  font-weight: 100;
+  line-height: 1.5em;
+  text-align: left;
+  margin-bottom: 16px;
+  float: left;
+  display: table;
+  clear: both;  
+}
+@media screen and (max-width: 800px) {
+  .chatbot{
+      padding-left: 10%;
+      padding-right: 10%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .chatbot{
+      padding-left: 10%;
+      padding-right: 10%;
+  }
+  input[type=text] {
+      width: 40%;
+    }
+}
+@media screen and (max-width: 480px) {
+  .chatbot{
+      padding-left: 1%;
+      padding-right: 1%;
+  }
+  input[type=text] {
+      width: 40%;
+    }
+}
+.chats{
+    float: left;
+}
+.inputarea{
+    padding: 10px;
+}
+input[type=text] {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+}
