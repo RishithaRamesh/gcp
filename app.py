@@ -30,7 +30,7 @@ import pickle
 with open("questions_final.json") as file:
     data = json.load(file)
 
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request, redirect, url_for
  
 app = Flask(__name__)
 arr = []
@@ -80,7 +80,7 @@ def chat():
             # print(Fore.GREEN + "ChatBot:" + Style.RESET_ALL,random.choice(responses))
             arr.append([inp, pred])
             return render_template('index.html',pred=pred,arr=arr)
-            
+            # return redirect(url_for('index',pred=pred,arr=arr),code = 302)
 
 if __name__ == '__main__':
     app.run(debug=True)

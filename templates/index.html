@@ -352,7 +352,7 @@
       </div>
       <div class="row">
         <div class="column">
-          <div class="card">
+          <div class="card" id="cloud">
             <h3>Cloud Engineering</h3>
             <p>List of quest to be completed</p>
             <ul>
@@ -390,7 +390,7 @@
           </div>
         </div>
         <div class="column">
-          <div class="card">
+          <div class="card" id="datascience">
             <h3>Data Science & Machine Learning</h3>
             <p>List of quest to be completed</p>
             <ul>
@@ -470,8 +470,10 @@
       <div class="footer">
         <div class="col">
           <h4>Tracks</h4>
-          <p>Cloud Engineering Track</p>
-          <p>Data Science and Machine Learning Track</p>
+          <p><a href="#cloud">Cloud Engineering Track</a></p>
+          <p>
+            <a href="#datascience">Data Science and Machine Learning Track</a>
+          </p>
         </div>
         <div class="col">
           <h4>Connect With Us:</h4>
@@ -503,6 +505,16 @@
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
       }
+
+      /* helps Refresh Page and Keep Scroll Position */
+      document.addEventListener("DOMContentLoaded", function (event) {
+        var scrollpos = localStorage.getItem("scrollpos");
+        if (scrollpos) window.scrollTo(0, scrollpos);
+      });
+
+      window.onbeforeunload = function (e) {
+        localStorage.setItem("scrollpos", window.scrollY);
+      };
     </script>
   </body>
 </html>
