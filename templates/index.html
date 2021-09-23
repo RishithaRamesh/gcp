@@ -12,7 +12,7 @@
         position:relative;
      }
       body {
-        font-family: open sans,sans-serif;
+        font-family: poppins,open sans,sans-serif;
         
       }
     /*text in the start*/
@@ -61,7 +61,34 @@
         text-align: center;
         background-color: #ffffff;
       }
-
+      .card:hover{
+          background-color: aqua;
+      }
+      .btn_3 {
+        color: #000;
+        text-transform: capitalize;
+        font-size: 16px;
+        position: relative;
+        display: inline-block;
+        -webkit-transition: .5s;
+        transition: .5s;
+        padding: 10px;
+        margin: 2px;
+        }
+      .btn_3:after {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: -8px;
+            width: 100%;
+            height: 2px;
+            background-color: #e8e9eb;
+            -webkit-transition: .5s;
+            transition: .5s;
+        }
+      a:link {
+            text-decoration: none;
+        }
       /*chat screen*/
       .chatbot{
           padding-left: 30%;
@@ -169,16 +196,6 @@
             border-top: 1px solid rgba(0,0,0,.1);
       }
 
-      .btn_3 {
-        color: #000;
-        text-transform: capitalize;
-        font-size: 14px;
-        position: relative;
-        display: inline-block;
-        -webkit-transition: .5s;
-        transition: .5s;
-        padding: 10px;
-    }
 
   </style>
 </head>
@@ -195,63 +212,58 @@
                 <div class="column">
                     <div class="card">
                         <h3>Cloud Engineering</h3>
+                        <h4>List of quest to be completed</h4>
                         <ul>
                             <li>
-                                <a href="#" class="btn_3">List of quest to be completed</a>
-                            </li>
-                            <li>
                                 <a href="#" class="btn_3">Getting Started: Create and Manage Cloud Resources</a>
-                                
                             </li>
                             <li>
-                                Perform Foundational Infrastructure Tasks In Google Cloud
+                                <a href="#" class="btn_3">Perform Foundational Infrastructure Tasks In Google Cloud</a>                               
                             </li>
                             <li>
-                                Setup and Configure a Cloud Environment in Google Cloud
+                                <a href="#" class="btn_3">Setup and Configure a Cloud Environment in Google Cloud</a>                             
                             </li>
                             <li>
-                                Deploy and Manage Cloud Environments with Google Cloud
+                                <a href="#" class="btn_3">Deploy and Manage Cloud Environments with Google Cloud</a>  
                             </li>
                             <li>
-                                Build and Secure Networks in Google Cloud
+                                <a href="#" class="btn_3">Build and Secure Networks in Google Cloud</a>  
                             </li>
                             <li>
-                                Deploy to Kubernetes in Google Cloud
+                                <a href="#" class="btn_3">Deploy to Kubernetes in Google Cloud</a>
                             </li>
-                        </ul>
-                        
+                        </ul>    
                     </div>
                 </div>      
                 <div class="column">
                     <div class="card">
                         <h3>Data Science & Machine Learning</h3>
+                        <h4>List of quest to be completed</h4>
                         <ul>
                             <li>
-                                <a href="#">List of quest to be completed</a>
+                                <a href="#" class="btn_3">Getting Started: Create and Manage Cloud Resources</a>   
                             </li>
                             <li>
-                                Getting Started: Create and Manage Cloud Resources
+                                <a href="#" class="btn_3">Perform Foundational Data, ML, and AI Tasks in Google Cloud</a>
                             </li>
                             <li>
-                                Perform Foundational Data, ML, and AI Tasks in Google Cloud
+                                <a href="#" class="btn_3">Insights from Data with BigQuery</a>
                             </li>
                             <li>
-                                Insights from Data with BigQuery
+                                <a href="#" class="btn_3">Engineer Data in Google Cloud</a>
                             </li>
                             <li>
-                                Engineer Data in Google Cloud
+                                <a href="#" class="btn_3">Integrate with Machine Learning APIs</a>       
                             </li>
                             <li>
-                                Integrate with Machine Learning APIs
-                            </li>
-                            <li>
-                                Explore Machine Learning Models with Explainable AI
+                                <a href="#" class="btn_3">Explore Machine Learning Models with Explainable AI</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-
+            
+            <hr class="footer__hr">
             <div class="chatbot">
                 <h2>
                     Start messaging with the bot (type quit to stop)!
