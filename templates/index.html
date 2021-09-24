@@ -2,12 +2,17 @@
 <html lang="en">
   <head>
     <title>GCP</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/main.css') }}"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/typing.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}"/>
 
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/Chat.js') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/app.js') }}"/>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+    
   </head>
   <body>
     <div class="container">
@@ -134,49 +139,6 @@
         </div>
       </div>
 
-      <hr class="footer__hr" />
-      <div class="chatbot">
-        <h2 style="text-align: center">FAQ's</h2>
-        <h2 style="text-align: center">You can start texting with the bot!</h2>
-
-        <div class="bordercover">
-          <div class="chats">
-            {% for i in range(arr |length) %} {% for j in range( arr[i] |length
-            ) %} {% if j%2 == 0 %}
-            <div class="chatbox1">
-              {{arr[i][j]}}
-              <br />
-            </div>
-            {% else %}
-            <div class="chatbox2">
-              {{arr[i][j]}}
-              <br />
-            </div>
-            {% endif %} {% endfor %} {% endfor %}
-          </div>
-          <br />
-
-          <div class="inputarea">
-            <form action="/index" method="POST" class="formsize">
-              <h3>
-                <input
-                  type="text"
-                  placeholder="Enter Message..."
-                  name="Question"
-                  class="inputField"
-                />
-                <input type="submit" value="Submit" />
-                <!-- <i class="fa fa-paper-plane" aria-hidden="true"></i> -->
-
-                <!-- <button type="submit" value="Submit" class="submit">
-                  <i class="fa fa-paper-plane submit" aria-hidden="true"></i>
-                </button> -->
-              </h3>
-            </form>
-          </div>
-        </div>
-      </div>
-
       <div>{% set pred='' %} {{pred}}</div>
       <hr class="footer__hr" />
       <div class="footer">
@@ -199,7 +161,59 @@
         </div>
       </div>
       <hr class="footer__hr" />
+<!-- trial space open-->
+
+      <div class="chatbox">
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__content--header">
+                    <!-- <h4 class="chatbox__heading--header">Chat support</h4> -->
+                    <!-- <p class="chatbox__description--header">There are many variations of passages of Lorem Ipsum available</p> -->
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <div>
+                  {% for i in range(arr |length) %} {% for j in range( arr[i] |length
+                    ) %} {% if j%2 == 0 %}
+                    <div class="chatbox1">
+                      {{arr[i][j]}}
+                      <br />
+                    </div>
+                    {% else %}
+                    <div class="chatbox2">
+                      {{arr[i][j]}}
+                      <br />
+                    </div>
+                    {% endif %} {% endfor %} {% endfor %}
+                </div>
+            </div>
+
+            <div class="inputarea chatbox__footer">
+              <form action="/index" method="POST" class="formsize">
+                <h3>
+                  <input
+                    type="text"
+                    placeholder="Enter Message..."
+                    name="Question"
+                    class="inputField"
+                  />
+                  <input type="submit" value="Send" />
+                  <!-- <i class="fa fa-paper-plane" aria-hidden="true"></i> -->
+                </h3>
+              </form>
+            </div>
+        </div>
+        <div class="chatbox__button">
+            <button>button</button>
+        </div>
+      </div>
+
+
+
+
+<!-- trial space close -->
     </div>
+
     <!-- javascript -->
     <script>
       const hamburger = document.querySelector(".hamburger");
@@ -230,6 +244,62 @@
         localStorage.setItem("scrollpos", window.scrollY);
       };
 
+      /*trial space open*/
+      class InteractiveChatbox {
+        constructor(a, b, c) {
+            this.args = {
+                button: a,
+                chatbox: b
+            }
+            this.icons = c;
+            this.state = false; 
+        }
+
+        display() {
+            const {button, chatbox} = this.args;
+            
+            button.addEventListener('click', () => this.toggleState(chatbox))
+        }
+
+        toggleState(chatbox) {
+            this.state = !this.state;
+            this.showOrHideChatBox(chatbox, this.args.button);
+        }
+
+        showOrHideChatBox(chatbox, button) {
+            if(this.state) {
+                chatbox.classList.add('chatbox--active')
+                this.toggleIcon(true, button);
+            } else if (!this.state) {
+                chatbox.classList.remove('chatbox--active')
+                this.toggleIcon(false, button);
+            }
+        }
+
+        toggleIcon(state, button) {
+            const { isClicked, isNotClicked } = this.icons;
+            let b = button.children[0].innerHTML;
+
+            if(state) {
+                button.children[0].innerHTML = isClicked; 
+            } else if(!state) {
+                button.children[0].innerHTML = isNotClicked;
+            }
+        }
+      }
+
+
+      const chatButton = document.querySelector('.chatbox__button');
+      const chatContent = document.querySelector('.chatbox__support');
+      const icons = {
+          isClicked: '<img src="./static/images/chatbox-icon.svg" />',
+          isNotClicked: '<img src="./static/images/chatbox-icon.svg" />'
+      }
+      const chatbox = new InteractiveChatbox(chatButton, chatContent, icons);
+      chatbox.display();
+      chatbox.toggleIcon(false, chatButton);
+      /*trial space close*/
+  
     </script>
   </body>
 </html>

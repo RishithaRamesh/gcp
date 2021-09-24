@@ -293,7 +293,15 @@ input[type="submit"]{
   padding: 5px;
 }
 .inputarea {
-  padding: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px;
+  background: var(--secondaryGradient);
+  box-shadow: var(--secondaryBoxShadow);
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  margin-top: 20px;
 }
 input[type="text"] {
   width: 90%;
@@ -302,6 +310,7 @@ input[type="text"] {
   border-color: #dadce0;
   margin-left: 5%;
   margin-right: 2%;
+  background-color: #eee;
 }
 /*footer*/
 .footer {
@@ -333,4 +342,15 @@ hr {
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+
+
+
+
+
+
+
+
+
+
 
