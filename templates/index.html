@@ -2,32 +2,67 @@
 <html lang="en">
   <head>
     <title>GCP</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/typing.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}"/>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/typing.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/chat.css') }}"
+    />
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='js/Chat.js') }}"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='js/app.js') }}"/>
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
-    
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='js/Chat.js') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='js/app.js') }}"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
       <header class="header">
         <nav class="navbar">
-          <a href="#"><img class="what" src="{{url_for('static', filename='images/logo.png')}}" /></a>
+          <a href="#"
+            ><img
+              class="what"
+              src="{{url_for('static', filename='images/logo.png')}}"
+          /></a>
           <ul class="nav-menu">
             <li class="nav-item">
               <a href="https://dscjssstu.in/" class="nav-link">GDSC JSSSTU</a>
             </li>
             <li class="nav-item">
-              <a href="https://events.withgoogle.com/30daysofgooglecloud/" class="nav-link">GCP</a>
+              <a
+                href="https://events.withgoogle.com/30daysofgooglecloud/"
+                class="nav-link"
+                >GCP</a
+              >
             </li>
             <li class="nav-item">
-              <a href="https://gdsc.community.dev/jss-science-technology-university-mysuru/" class="nav-link">Join Us</a>
+              <a
+                href="https://gdsc.community.dev/jss-science-technology-university-mysuru/"
+                class="nav-link"
+                >Join Us</a
+              >
             </li>
           </ul>
           <div class="hamburger">
@@ -45,21 +80,46 @@
           Cloud Platform - the tool that powers apps like Google Search, Gmail
           and YouTube.
         </p>
-        <h2 style="padding-top:30px;">Earn valuable badges and fun goodies!</h2>
-        <p style="font-weight: 350; font-size: 1.2rem; color: #848484; padding-bottom:30px;">
+        <h2 style="padding-top: 30px">Earn valuable badges and fun goodies!</h2>
+        <p
+          style="
+            font-weight: 350;
+            font-size: 1.2rem;
+            color: #848484;
+            padding-bottom: 30px;
+          "
+        >
           On the succesful completion of this event, participants will stand a
           chance to win goodies like laptop bags, customised T-shirts and Google
           Cloud Sticker packs.
-        </p>  
+        </p>
         <div class="goodies-row">
-          <a href="#"><img class="goodies-col" src="{{url_for('static', filename='images/tshirt.jpg')}}" /></a>
-          <a href="#"><img class="goodies-col" src="{{url_for('static', filename='images/stickers.png')}}" /></a>
-          <a href="#"><img class="goodies-col" src="{{url_for('static', filename='images/bottle.jpg')}}" /></a>
-          <a href="#"><img class="goodies-col" src="{{url_for('static', filename='images/bag.jpg')}}" /></a>
+          <a href="#"
+            ><img
+              class="goodies-col"
+              src="{{url_for('static', filename='images/tshirt.jpg')}}"
+          /></a>
+          <a href="#"
+            ><img
+              class="goodies-col"
+              src="{{url_for('static', filename='images/stickers.png')}}"
+          /></a>
+          <a href="#"
+            ><img
+              class="goodies-col"
+              src="{{url_for('static', filename='images/bottle.jpg')}}"
+          /></a>
+          <a href="#"
+            ><img
+              class="goodies-col"
+              src="{{url_for('static', filename='images/bag.jpg')}}"
+          /></a>
         </div>
-        <h2 style="text-align: center; padding-top:30px;">We have two exciting tracks for you:</h2>  
+        <h2 style="text-align: center; padding-top: 30px">
+          We have two exciting tracks for you:
+        </h2>
       </div>
-   
+
       <div class="row">
         <div class="column">
           <div class="scrolly">
@@ -74,7 +134,8 @@
                 </li>
                 <li>
                   <a href="#" class="btn_3"
-                    >Perform Foundational Infrastructure Tasks In Google Cloud</a
+                    >Perform Foundational Infrastructure Tasks In Google
+                    Cloud</a
                   >
                 </li>
                 <li>
@@ -100,7 +161,6 @@
               </ul>
             </div>
           </div>
-
         </div>
         <div class="column">
           <div class="card" id="datascience">
@@ -151,67 +211,84 @@
         </div>
         <div class="col">
           <h4>Connect With Us:</h4>
-          <a href="https://www.linkedin.com/company/dsc-jssstu/"><i class="fa fa-linkedin" style="font-size:36px; padding:2px; color:black;"></i></a>
-          <a href="https://github.com/gdsc-jssstu"><i class="fa fa-github" style="font-size:36px; padding:2px; color:black;"></i></a>
-          <a href="https://instagram.com/gdscjssstu/"><i class="fa fa-instagram" style="font-size:36px; padding:2px; color:black;"></i></a>
+          <a href="https://www.linkedin.com/company/dsc-jssstu/"
+            ><i
+              class="fa fa-linkedin"
+              style="font-size: 36px; padding: 2px; color: black"
+            ></i
+          ></a>
+          <a href="https://github.com/gdsc-jssstu"
+            ><i
+              class="fa fa-github"
+              style="font-size: 36px; padding: 2px; color: black"
+            ></i
+          ></a>
+          <a href="https://instagram.com/gdscjssstu/"
+            ><i
+              class="fa fa-instagram"
+              style="font-size: 36px; padding: 2px; color: black"
+            ></i
+          ></a>
         </div>
         <div class="col">
           <h4>Contact:</h4>
-          <a href="https://api.whatsapp.com/send/?phone=%2B916362942135&text&app_absent=0"><i class="fa fa-whatsapp" style="font-size:36px; color:black;"></i></a>
+          <a
+            href="https://api.whatsapp.com/send/?phone=%2B916362942135&text&app_absent=0"
+            ><i class="fa fa-whatsapp" style="font-size: 36px; color: black"></i
+          ></a>
         </div>
       </div>
       <hr class="footer__hr" />
-<!-- trial space open-->
+      <!-- trial space open-->
 
       <div class="chatbox">
         <div class="chatbox__support">
-            <div class="chatbox__header">
-                <div class="chatbox__content--header">
-                    <!-- <h4 class="chatbox__heading--header">Chat support</h4> -->
-                    <!-- <p class="chatbox__description--header">There are many variations of passages of Lorem Ipsum available</p> -->
-                </div>
+          <div class="chatbox__header">
+            <div class="chatbox__content--header">
+              <!-- <h4 class="chatbox__heading--header">Chat support</h4> -->
+              <!-- <p class="chatbox__description--header">There are many variations of passages of Lorem Ipsum available</p> -->
             </div>
-            <div class="chatbox__messages">
-                <div>
-                  {% for i in range(arr |length) %} {% for j in range( arr[i] |length
-                    ) %} {% if j%2 == 0 %}
-                    <div class="chatbox1">
-                      {{arr[i][j]}}
-                      <br />
-                    </div>
-                    {% else %}
-                    <div class="chatbox2">
-                      {{arr[i][j]}}
-                      <br />
-                    </div>
-                    {% endif %} {% endfor %} {% endfor %}
-                </div>
+          </div>
+          <div class="chatbox__messages">
+            <div class="chatbox2">Heyy! Ask me anything</div>
+            <div>
+              {% for i in range(arr |length) %} {% for j in range( arr[i]
+              |length ) %} {% if j%2 == 0 %}
+              <div class="chatbox1">
+                {{arr[i][j]}}
+                <br />
+              </div>
+              {% else %}
+              <div class="chatbox2">
+                {{arr[i][j]}}
+                <br />
+              </div>
+              {% endif %} {% endfor %} {% endfor %}
             </div>
+          </div>
 
-            <div class="inputarea chatbox__footer">
-              <form action="/index" method="POST" class="formsize">
-                <h3>
-                  <input
-                    type="text"
-                    placeholder="Enter Message..."
-                    name="Question"
-                    class="inputField"
-                  />
-                  <input type="submit" value="Send" />
-                  <!-- <i class="fa fa-paper-plane" aria-hidden="true"></i> -->
-                </h3>
-              </form>
-            </div>
+          <div class="inputarea chatbox__footer">
+            <form action="/index" method="POST" class="formsize" id="form">
+              <h3>
+                <input
+                  type="text"
+                  placeholder="Enter Message..."
+                  name="Question"
+                  class="inputField"
+                  id="user_input"
+                />
+                <input type="submit" value="Send" id="snd_btn" />
+                <!-- <i class="fa fa-paper-plane" aria-hidden="true"></i> -->
+              </h3>
+            </form>
+          </div>
         </div>
         <div class="chatbox__button">
-            <button>button</button>
+          <button>button</button>
         </div>
       </div>
 
-
-
-
-<!-- trial space close -->
+      <!-- trial space close -->
     </div>
 
     <!-- javascript -->
@@ -247,59 +324,94 @@
       /*trial space open*/
       class InteractiveChatbox {
         constructor(a, b, c) {
-            this.args = {
-                button: a,
-                chatbox: b
-            }
-            this.icons = c;
-            this.state = false; 
+          this.args = {
+            button: a,
+            chatbox: b,
+          };
+          this.icons = c;
+          this.state = false;
         }
 
         display() {
-            const {button, chatbox} = this.args;
-            
-            button.addEventListener('click', () => this.toggleState(chatbox))
+          const { button, chatbox } = this.args;
+
+          button.addEventListener("click", () => this.toggleState(chatbox));
         }
 
         toggleState(chatbox) {
-            this.state = !this.state;
-            this.showOrHideChatBox(chatbox, this.args.button);
+          this.state = !this.state;
+          this.showOrHideChatBox(chatbox, this.args.button);
         }
 
         showOrHideChatBox(chatbox, button) {
-            if(this.state) {
-                chatbox.classList.add('chatbox--active')
-                this.toggleIcon(true, button);
-            } else if (!this.state) {
-                chatbox.classList.remove('chatbox--active')
-                this.toggleIcon(false, button);
-            }
+          if (this.state) {
+            chatbox.classList.add("chatbox--active");
+            this.toggleIcon(true, button);
+          } else if (!this.state) {
+            chatbox.classList.remove("chatbox--active");
+            this.toggleIcon(false, button);
+          }
         }
 
         toggleIcon(state, button) {
-            const { isClicked, isNotClicked } = this.icons;
-            let b = button.children[0].innerHTML;
+          const { isClicked, isNotClicked } = this.icons;
+          let b = button.children[0].innerHTML;
 
-            if(state) {
-                button.children[0].innerHTML = isClicked; 
-            } else if(!state) {
-                button.children[0].innerHTML = isNotClicked;
-            }
+          if (state) {
+            button.children[0].innerHTML = isClicked;
+          } else if (!state) {
+            button.children[0].innerHTML = isNotClicked;
+          }
         }
       }
 
-
-      const chatButton = document.querySelector('.chatbox__button');
-      const chatContent = document.querySelector('.chatbox__support');
+      const chatButton = document.querySelector(".chatbox__button");
+      const chatContent = document.querySelector(".chatbox__support");
       const icons = {
-          isClicked: '<img src="./static/images/bluechat.svg" />',
-          isNotClicked: '<img src="./static/images/bluechat.svg" />'
-      }
+        isClicked: '<img src="./static/images/bluechat.svg" />',
+        isNotClicked: '<img src="./static/images/bluechat.svg" />',
+      };
       const chatbox = new InteractiveChatbox(chatButton, chatContent, icons);
       chatbox.display();
       chatbox.toggleIcon(false, chatButton);
       /*trial space close*/
-  
+
+      var form = document.getElementById("form");
+      var history_element =
+        document.getElementsByClassName("chatbox__messages")[0];
+      var user_input = document.getElementById("user_input");
+      form.addEventListener("submit", handleForm);
+
+      function handleForm(event) {
+        event.preventDefault();
+        let new_msg = document.createElement("div");
+
+        let user_msg_element = document.createElement("div");
+        user_msg_element.className = "chatbox1";
+        user_msg_element.append(user_input.value);
+        user_msg_element.appendChild(document.createElement("br"));
+        new_msg.appendChild(user_msg_element);
+
+        const data = new URLSearchParams();
+        for (const pair of new FormData(form)) {
+          data.append(pair[0], pair[1]);
+        }
+        fetch("/chat", {
+          method: "POST",
+          body: data,
+        })
+          .then((r) => r.json())
+          .then((data) => {
+            let bot_msg_element = document.createElement("div");
+            bot_msg_element.className = "chatbox2";
+            bot_msg_element.append(data["answer"]);
+            bot_msg_element.appendChild(document.createElement("br"));
+            new_msg.appendChild(bot_msg_element);
+
+            history_element.insertBefore(new_msg, history_element.firstChild);
+            user_input.value = "";
+          });
+      }
     </script>
   </body>
 </html>
