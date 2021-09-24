@@ -4,326 +4,25 @@
     <title>GCP</title>
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='main.css') }}"
+      href="{{ url_for('static', filename='css/main.css') }}"
     />
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      .container {
-        min-height: 100%;
-        position: relative;
-      }
-      body {
-        font-family: poppins, open sans, sans-serif;
-      }
-      /*navbar*/
-      .header {
-        border-bottom: 1px solid #e2e8f0;
-      }
-      .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 1.5rem;
-      }
-      .hamburger {
-        display: none;
-      }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-      .bar {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px auto;
-        -webkit-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-        background-color: #101010;
-      }
-      .nav-menu {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .nav-item {
-        margin-left: 2rem;
-      }
-
-      .nav-link {
-        font-size: 1rem;
-        font-weight: 400;
-        color: #475569;
-      }
-
-      .nav-link:hover {
-        color: #482ff7;
-      }
-
-      .nav-logo {
-        font-size: 2.1rem;
-        font-weight: 500;
-        color: #482ff7;
-      }
-      @media only screen and (max-width: 768px) {
-        .nav-menu {
-          position: fixed;
-          left: -100%;
-          top: 5rem;
-          flex-direction: column;
-          background-color: #fff;
-          width: 100%;
-          border-radius: 10px;
-          text-align: center;
-          transition: 0.3s;
-          box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-menu.active {
-          left: 0;
-        }
-
-        .nav-item {
-          margin: 2.5rem 0;
-        }
-
-        .hamburger {
-          display: block;
-          cursor: pointer;
-        }
-        .hamburger.active .bar:nth-child(2) {
-          opacity: 0;
-        }
-
-        .hamburger.active .bar:nth-child(1) {
-          transform: translateY(8px) rotate(45deg);
-        }
-
-        .hamburger.active .bar:nth-child(3) {
-          transform: translateY(-8px) rotate(-45deg);
-        }
-      }
-
-      /*text in the start*/
-      .content {
-        padding-left: 20%;
-        padding-right: 20%;
-        text-align: center;
-      }
-      p {
-        color: #848484;
-        font-family: open sans, sans-serif;
-        line-height: 1.929;
-        font-size: 14px;
-        margin-bottom: 0;
-        font-weight: 300;
-      }
-      /*gcp list*/
-      .row {
-        margin: 0 -5px;
-        margin-left: 10%;
-        margin-right: 10%;
-      }
-      /* Clear floats after the columns */
-      .row:after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-      .column {
-        float: left;
-        width: 50%;
-        padding: 0 10px;
-      }
-      ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-      }
-      .ul > li {
-        padding: 10px;
-      }
-      /* Responsive columns */
-      @media screen and (max-width: 630px) {
-        .column {
-          width: 100%;
-          display: block;
-          margin-bottom: 20px;
-        }
-        .row {
-          display: block;
-        }
-      }
-      .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        padding: 16px;
-        text-align: center;
-        background-color: #ffffff;
-      }
-      .card:hover {
-        background-color: #4285f4;
-        transition: 0.9s;
-        color: #fff;
-      }
-      .btn_3 {
-        color: #000;
-        text-transform: capitalize;
-        font-size: 16px;
-        position: relative;
-        display: inline-block;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-        padding: 10px;
-        margin: 2px;
-        transition: 0.5s;
-      }
-      .btn_3:after {
-        position: absolute;
-        content: "";
-        left: 0;
-        bottom: -8px;
-        width: 100%;
-        height: 2px;
-        background-color: #e8e9eb;
-        -webkit-transition: 0.5s;
-        transition: 0.5s;
-      }
-      a:link {
-        text-decoration: none;
-      }
-
-      /*chat screen*/
-      .chatbot {
-        padding-left: 30%;
-        padding-right: 30%;
-        display: flex;
-        flex-direction: column;
-      }
-      .bordercover {
-        border-style: solid;
-        border-radius: 30px;
-        border-width: thin;
-        border-color: #dadce0;
-      }
-      input[type="submit"] {
-        margin-left: -80px;
-        height: 30px;
-        width: 60px;
-      }
-
-      .chatbox1 {
-        background: #4285f4;
-        padding: 15px;
-        font-size: 14px;
-        color: #ccc;
-        border-radius: 30px;
-        text-align: right;
-        font-weight: 100;
-        line-height: 1.5em;
-        text-align: right;
-        margin-left: 30%;
-        margin-bottom: 16px;
-        float: right;
-        display: table;
-        clear: both;
-      }
-      .chatbox2 {
-        max-width: 80%;
-        display: block;
-        background: #dadce0;
-        padding: 15px;
-        font-size: 14px;
-        color: rgb(3, 2, 2);
-        border-radius: 30px;
-        font-weight: 100;
-        line-height: 1.5em;
-        text-align: left;
-        margin-bottom: 16px;
-        float: left;
-        display: table;
-        clear: both;
-      }
-      @media screen and (max-width: 800px) {
-        .chatbot {
-          padding-left: 10%;
-          padding-right: 10%;
-        }
-      }
-      @media screen and (max-width: 600px) {
-        .chatbot {
-          padding-left: 10%;
-          padding-right: 10%;
-        }
-        input[type="text"] {
-          width: 40%;
-        }
-      }
-      @media screen and (max-width: 480px) {
-        .chatbot {
-          padding-left: 1%;
-          padding-right: 1%;
-        }
-      }
-      .chats {
-        padding: 5px;
-      }
-      .inputarea {
-        padding: 10px;
-      }
-      input[type="text"] {
-        width: 90%;
-        padding: 12px 20px;
-        box-sizing: border-box;
-        border-color: #dadce0;
-        margin-left: 5%;
-        margin-right: 2%;
-      }
-      /*footer*/
-      .footer {
-        margin-left: 10%;
-        margin-right: 10%;
-        display: flex;
-        justify-content: space-around;
-      }
-
-      @media screen and (max-width: 700px) {
-        .col {
-          width: 100%;
-          display: block;
-          margin-bottom: 20px;
-        }
-        .footer {
-          display: block;
-        }
-      }
-      .footer__hr {
-        height: 1px;
-        border: none;
-        background: #444;
-        opacity: 0.2;
-      }
-      hr {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        border: 0;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-      }
-    </style>
   </head>
   <body>
     <div class="container">
       <header class="header">
         <nav class="navbar">
-          <a href="#" class="nav-logo">logo</a>
+          <a href="#"><img class="what" src="{{url_for('static', filename='images/logo.png')}}" /></a>
           <ul class="nav-menu">
             <li class="nav-item">
-              <a href="#" class="nav-link">GDSC JSSSTU</a>
+              <a href="https://dscjssstu.in/" class="nav-link">GDSC JSSSTU</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Know More</a>
+              <a href="https://events.withgoogle.com/30daysofgooglecloud/" class="nav-link">GCP</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">Join Us</a>
+              <a href="https://gdsc.community.dev/jss-science-technology-university-mysuru/" class="nav-link">Join Us</a>
             </li>
           </ul>
           <div class="hamburger">
@@ -333,7 +32,6 @@
           </div>
         </nav>
       </header>
-
       <div center class="content">
         <h2>About 30 Days of Google Cloud</h2>
         <p style="font-weight: 350; font-size: 1.2rem; color: #848484">
@@ -347,52 +45,62 @@
           On the succesful completion of this event, participants will stand a
           chance to win goodies like laptop bags, customised T-shirts and Google
           Cloud Sticker packs.
-        </p>
-        <h2>We have two exciting tracks for you:</h2>
+        </p>  
+        <div class="goodies-row">
+          <a href="#"><img class="goodies-col" src="{{url_for('static', filename='images/tshirt.jpg')}}" /></a>
+          <a href="#"><img class="goodies-col" src="{{url_for('static', filename='images/stickers.png')}}" /></a>
+          <a href="#"><img class="goodies-col" src="{{url_for('static', filename='images/bottle.jpg')}}" /></a>
+          <a href="#"><img class="goodies-col" src="{{url_for('static', filename='images/bag.jpg')}}" /></a>
+        </div>
+        <h2 style="text-align: center;">We have two exciting tracks for you:</h2>  
       </div>
+   
       <div class="row">
         <div class="column">
-          <div class="card" id="cloud">
-            <h3>Cloud Engineering</h3>
-            <p>List of quest to be completed</p>
-            <ul>
-              <li>
-                <a href="#" class="btn_3"
-                  >Getting Started: Create and Manage Cloud Resources</a
-                >
-              </li>
-              <li>
-                <a href="#" class="btn_3"
-                  >Perform Foundational Infrastructure Tasks In Google Cloud</a
-                >
-              </li>
-              <li>
-                <a href="#" class="btn_3"
-                  >Setup and Configure a Cloud Environment in Google Cloud</a
-                >
-              </li>
-              <li>
-                <a href="#" class="btn_3"
-                  >Deploy and Manage Cloud Environments with Google Cloud</a
-                >
-              </li>
-              <li>
-                <a href="#" class="btn_3"
-                  >Build and Secure Networks in Google Cloud</a
-                >
-              </li>
-              <li>
-                <a href="#" class="btn_3"
-                  >Deploy to Kubernetes in Google Cloud</a
-                >
-              </li>
-            </ul>
+          <div class="scrolly">
+            <div class="card" id="cloud">
+              <h3>Cloud Engineering</h3>
+              <p>List of quests to be completed</p>
+              <ul>
+                <li>
+                  <a href="#" class="btn_3"
+                    >Getting Started: Create and Manage Cloud Resources</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="btn_3"
+                    >Perform Foundational Infrastructure Tasks In Google Cloud</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="btn_3"
+                    >Setup and Configure a Cloud Environment in Google Cloud</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="btn_3"
+                    >Deploy and Manage Cloud Environments with Google Cloud</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="btn_3"
+                    >Build and Secure Networks in Google Cloud</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="btn_3"
+                    >Deploy to Kubernetes in Google Cloud</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
+
         </div>
         <div class="column">
           <div class="card" id="datascience">
             <h3>Data Science & Machine Learning</h3>
-            <p>List of quest to be completed</p>
+            <p>List of quests to be completed</p>
             <ul>
               <li>
                 <a href="#" class="btn_3"
@@ -458,6 +166,11 @@
                   class="inputField"
                 />
                 <input type="submit" value="Submit" />
+                <!-- <i class="fa fa-paper-plane" aria-hidden="true"></i> -->
+
+                <!-- <button type="submit" value="Submit" class="submit">
+                  <i class="fa fa-paper-plane submit" aria-hidden="true"></i>
+                </button> -->
               </h3>
             </form>
           </div>
@@ -465,7 +178,6 @@
       </div>
 
       <div>{% set pred='' %} {{pred}}</div>
-
       <hr class="footer__hr" />
       <div class="footer">
         <div class="col">
@@ -477,11 +189,13 @@
         </div>
         <div class="col">
           <h4>Connect With Us:</h4>
-          <p>Cloud Engineering Track</p>
+          <a href="https://www.linkedin.com/company/dsc-jssstu/"><i class="fa fa-linkedin" style="font-size:36px; padding:2px; color:black;"></i></a>
+          <a href="https://github.com/gdsc-jssstu"><i class="fa fa-github" style="font-size:36px; padding:2px; color:black;"></i></a>
+          <a href="https://instagram.com/gdscjssstu/"><i class="fa fa-instagram" style="font-size:36px; padding:2px; color:black;"></i></a>
         </div>
         <div class="col">
           <h4>Contact:</h4>
-          <p>Poorvi:</p>
+          <a href="https://api.whatsapp.com/send/?phone=%2B916362942135&text&app_absent=0"><i class="fa fa-whatsapp" style="font-size:36px; color:black;"></i></a>
         </div>
       </div>
       <hr class="footer__hr" />
@@ -515,6 +229,7 @@
       window.onbeforeunload = function (e) {
         localStorage.setItem("scrollpos", window.scrollY);
       };
+
     </script>
   </body>
 </html>

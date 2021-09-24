@@ -5,18 +5,24 @@
   min-height: 100%;
   position: relative;
 }
-body {
-  font-family: poppins, open sans, sans-serif;
+body,h1,h2,h3,h4,p {
+  font-family: sans-serif,"Roboto","Google Sans",poppins, open sans,  !important;
 }
+
 /*navbar*/
 .header {
   border-bottom: 1px solid #e2e8f0;
+}
+.what{
+  height: 170px;
+  width: 350px;
 }
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
+  height: 80px;
 }
 .hamburger {
   display: none;
@@ -109,9 +115,30 @@ p {
   margin-bottom: 0;
   font-weight: 300;
 }
+/*goodies*/
+.goodies-row{
+  margin: 0 -5px;
+}
+.goodies-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.goodies-col {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+@media screen and (max-width: 700px) {
+  .goodies-col {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
 /*gcp list*/
 .row {
-  margin: 0 -5px;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -135,7 +162,7 @@ ul {
   padding: 10px;
 }
 /* Responsive columns */
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 700px) {
   .column {
     width: 100%;
     display: block;
@@ -149,15 +176,18 @@ ul {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #e8e9eb;
+  overflow: hidden;
+  transition: transform .5s ease;
 }
 .card:hover {
-  background-color: #4285f4;
+  background-color: #c8cdd6;
   transition: 0.9s;
-  color: #fff;
+  transition: transform .5s ease;
+  transform: scale(1.005);
 }
 .btn_3 {
-  color: #000;
+  color: #3a3838;
   text-transform: capitalize;
   font-size: 16px;
   position: relative;
@@ -167,7 +197,9 @@ ul {
   padding: 10px;
   margin: 2px;
   transition: 0.5s;
+  
 }
+
 .btn_3:after {
   position: absolute;
   content: "";
@@ -175,9 +207,11 @@ ul {
   bottom: -8px;
   width: 100%;
   height: 2px;
-  background-color: #e8e9eb;
+  /* background-color: #e8e9eb; */
+  background-color: #101010;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  
 }
 a:link {
   text-decoration: none;
@@ -196,7 +230,7 @@ a:link {
   border-width: thin;
   border-color: #dadce0;
 }
-input[type="submit"] {
+input[type="submit"]{
   margin-left: -80px;
   height: 30px;
   width: 60px;
@@ -206,7 +240,7 @@ input[type="submit"] {
   background: #4285f4;
   padding: 15px;
   font-size: 14px;
-  color: #ccc;
+  color: rgb(252, 252, 252);
   border-radius: 30px;
   text-align: right;
   font-weight: 100;
@@ -299,3 +333,4 @@ hr {
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
