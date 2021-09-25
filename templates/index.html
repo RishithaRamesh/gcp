@@ -168,8 +168,7 @@
           </div>
         </div>
       </div>
-
-      <div>{% set pred='' %} {{pred}}</div>
+      <!-- <div>{% set pred='' %} {{pred}}</div> -->
       <hr class="footer__hr" />
       <div class="footer">
         <div class="col">
@@ -209,21 +208,20 @@
         </div>
       </div>
       <hr class="footer__hr" />
-      <!-- trial space open-->
 
       <div class="chatbox">
         <div class="chatbox__support">
-          <div class="chatbox__header">
-            <div class="chatbox__content--header">
-              <!-- <h4 class="chatbox__heading--header">Chat support</h4> -->
-              <!-- <p class="chatbox__description--header">There are many variations of passages of Lorem Ipsum available</p> -->
+          <div
+            class="chatbox__header"
+            style="display: flex; align-items: center"
+          >
+            <div class="chatbox__content--header" style="color: aliceblue">
+              Chatbot
             </div>
           </div>
           <div class="chatbox__messages">
             <div class="chatbox2">Heyy! Ask me anything</div>
             <div>
-              <!-- {% for i in range(arr |length) %} {% for j in range( arr[i]
-              |length ) %} {% if j%2 == 0 %} -->
               <script>
                 for (let i = 0; i < arr.length; i++) {
                   for (let j = 0; j < arr.length; j++) {
@@ -247,12 +245,6 @@
                   }
                 }
               </script>
-              <!-- 
-              <div class="chatbox2">
-                {{arr[i][j]}}
-                <br />
-              </div> -->
-              <!-- {% endif %} {% endfor %} {% endfor %} -->
             </div>
           </div>
 
@@ -276,12 +268,11 @@
           <button>button</button>
         </div>
       </div>
-
-      <!-- trial space close -->
     </div>
 
     <!-- javascript -->
     <script>
+      /* navbar */
       const hamburger = document.querySelector(".hamburger");
       const navMenu = document.querySelector(".nav-menu");
 
@@ -310,7 +301,7 @@
         localStorage.setItem("scrollpos", window.scrollY);
       };
 
-      /*trial space open*/
+      /*chatbot button and ui space*/
       class InteractiveChatbox {
         constructor(a, b, c) {
           this.args = {
@@ -363,8 +354,8 @@
       const chatbox = new InteractiveChatbox(chatButton, chatContent, icons);
       chatbox.display();
       chatbox.toggleIcon(false, chatButton);
-      /*trial space close*/
 
+      /*chatbot logic*/
       var form = document.getElementById("form");
       var history_element =
         document.getElementsByClassName("chatbox__messages")[0];
