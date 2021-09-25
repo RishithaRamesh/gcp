@@ -14,7 +14,7 @@ body,h1,h2,h3,h4,p {
 .header {
   border-bottom: 1px solid #e2e8f0;
 }
-.what{
+.logo{
   height: 170px;
   width: 350px;
 }
@@ -75,6 +75,7 @@ body,h1,h2,h3,h4,p {
     text-align: center;
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    z-index: 5678908;
   }
 
   .nav-menu.active {

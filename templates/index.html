@@ -23,7 +23,7 @@
     <div class="container">
       <header class="header">
         <nav class="navbar">
-          <a href="#"><img class="what" src="../static/images/logo.png" /></a>
+          <a href="#"><img class="logo" src="../static/images/logo.png" /></a>
           <ul class="nav-menu">
             <li class="nav-item">
               <a href="https://dscjssstu.in/" class="nav-link">GDSC JSSSTU</a>
@@ -216,7 +216,7 @@
             style="display: flex; align-items: center"
           >
             <div class="chatbox__content--header" style="color: aliceblue">
-              Chatbot
+              Let's Chat!
             </div>
           </div>
           <div class="chatbox__messages">
@@ -290,6 +290,14 @@
         hamburger.classList.remove("active");
         navMenu.classList.remove("active");
       }
+      function navSlider() {
+        console.log(this.scrollY);
+        if(this.scrollY > this.innerHeight / 2){
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        }
+      }
+      window.addEventListener("scroll", navSlider);
 
       /* helps Refresh Page and Keep Scroll Position */
       document.addEventListener("DOMContentLoaded", function (event) {
