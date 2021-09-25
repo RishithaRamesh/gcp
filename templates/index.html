@@ -2,31 +2,13 @@
 <html lang="en">
   <head>
     <title>GCP</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/main.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/typing.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/chat.css') }}"
-    />
+    <link rel="stylesheet" href="../static/css/main.css" />
+    <link rel="stylesheet" href="../static/css/typing.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/chat.css" />
 
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='js/Chat.js') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='js/app.js') }}"
-    />
+    <link rel="stylesheet" href="../static/js/Chat.js" />
+    <link rel="stylesheet" href="../static/js/app.js" />
 
     <link
       rel="stylesheet"
@@ -41,11 +23,7 @@
     <div class="container">
       <header class="header">
         <nav class="navbar">
-          <a href="#"
-            ><img
-              class="what"
-              src="{{url_for('static', filename='images/logo.png')}}"
-          /></a>
+          <a href="#"><img class="what" src="../static/images/logo.png" /></a>
           <ul class="nav-menu">
             <li class="nav-item">
               <a href="https://dscjssstu.in/" class="nav-link">GDSC JSSSTU</a>
@@ -95,24 +73,16 @@
         </p>
         <div class="goodies-row">
           <a href="#"
-            ><img
-              class="goodies-col"
-              src="{{url_for('static', filename='images/tshirt.jpg')}}"
+            ><img class="goodies-col" src="../static/images/tshirt.jpg"
           /></a>
           <a href="#"
-            ><img
-              class="goodies-col"
-              src="{{url_for('static', filename='images/stickers.png')}}"
+            ><img class="goodies-col" src="../static/images/stickers.png"
           /></a>
           <a href="#"
-            ><img
-              class="goodies-col"
-              src="{{url_for('static', filename='images/bottle.jpg')}}"
+            ><img class="goodies-col" src="../static/images/bottle.jpg"
           /></a>
           <a href="#"
-            ><img
-              class="goodies-col"
-              src="{{url_for('static', filename='images/bag.jpg')}}"
+            ><img class="goodies-col" src="../static/images/bag.jpg"
           /></a>
         </div>
         <h2 style="text-align: center; padding-top: 30px">
@@ -252,18 +222,37 @@
           <div class="chatbox__messages">
             <div class="chatbox2">Heyy! Ask me anything</div>
             <div>
-              {% for i in range(arr |length) %} {% for j in range( arr[i]
-              |length ) %} {% if j%2 == 0 %}
-              <div class="chatbox1">
-                {{arr[i][j]}}
-                <br />
-              </div>
-              {% else %}
+              <!-- {% for i in range(arr |length) %} {% for j in range( arr[i]
+              |length ) %} {% if j%2 == 0 %} -->
+              <script>
+                for (let i = 0; i < arr.length; i++) {
+                  for (let j = 0; j < arr.length; j++) {
+                    if (j % 2 === 0) {
+                      let div = document.createElement("div");
+                      div.className = "chatbox1";
+                      div.innerHTML = arr[i][j] + <br />;
+                      document
+                        .getElementsByClassName("chatbox__messages")[0]
+                        .appendChild(div);
+                    }
+                    //  document.getElementsByClassName("chatbox1")[0].innerHTML= arr[i][j];
+                    else {
+                      let div = document.createElement("div");
+                      div.className = "chatbox2";
+                      div.innerHTML = arr[i][j] + <br />;
+                      document
+                        .getElementsByClassName("chatbox__messages")[0]
+                        .appendChild(div);
+                    }
+                  }
+                }
+              </script>
+              <!-- 
               <div class="chatbox2">
                 {{arr[i][j]}}
                 <br />
-              </div>
-              {% endif %} {% endfor %} {% endfor %}
+              </div> -->
+              <!-- {% endif %} {% endfor %} {% endfor %} -->
             </div>
           </div>
 
